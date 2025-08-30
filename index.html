@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frank Chukwu – WordPress Designer & Website Manager</title>
+  <meta name="description" content="Portfolio of CHUKWU FRANK CHIKAODIRI – WordPress designer, website manager, blogger and content writer. WordPress, HTML, CSS, JavaScript." />
+  <meta name="author" content="CHUKWU FRANK CHIKAODIRI" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d10; --card:#12161b; --text:#e7edf3; --muted:#9fb0c3; --brand:#28c76f; --brand-2:#20a4f3; --stroke:#20262d;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.75);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--stroke)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo svg{filter:drop-shadow(0 2px 6px rgba(32,164,243,.35))}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{opacity:.9}
+    .cta{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#00140a;padding:10px 16px;border-radius:14px;font-weight:700;box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{padding:72px 0 40px;border-bottom:1px solid var(--stroke)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--stroke);border-radius:999px;color:var(--muted);font-weight:600}
+    h1{font-size:44px;line-height:1.1;margin:14px 0 14px}
+    p.lead{color:var(--muted);font-size:17px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+    .badge{border:1px solid var(--stroke);padding:8px 12px;border-radius:12px;color:#cfe4ff;background:linear-gradient(180deg,rgba(32,164,243,.07),transparent)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+    .stat{background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:16px;text-align:center;box-shadow:var(--shadow)}
+    .stat strong{font-size:24px;display:block}
+    .avatar-card{background:var(--card);border:1px solid var(--stroke);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+    .avatar{width:96px;height:96px;border-radius:18px;background:linear-gradient(135deg,#0f2027,#2c5364);display:grid;place-items:center;margin-bottom:14px}
+
+    /* Sections */
+    section{padding:64px 0;border-bottom:1px solid var(--stroke)}
+    h2{font-size:28px;margin:0 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border:1px solid var(--stroke);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .chip{display:inline-block;border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px}
+
+    /* Projects */
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .filter-btn{border:1px solid var(--stroke);background:transparent;color:var(--text);padding:8px 12px;border-radius:12px;cursor:pointer}
+    .filter-btn.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#00140a;font-weight:700}
+    .project-thumb{height:160px;border-radius:12px;background:linear-gradient(135deg,#203a43,#2c5364);margin:-2px -2px 12px -2px;border:2px solid var(--stroke);display:grid;place-items:center}
+
+    /* Services */
+    .service{display:flex;gap:14px}
+    .service .icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,rgba(40,199,111,.25),rgba(32,164,243,.25));display:grid;place-items:center;border:1px solid var(--stroke)}
+
+    /* Testimonials */
+    .quote{font-style:italic;color:#c9d6e2}
+
+    /* Blog */
+    .post{display:flex;gap:14px}
+    .post .thumb{width:100px;height:72px;border-radius:12px;background:linear-gradient(135deg,#1d976c,#93f9b9);border:1px solid var(--stroke)}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, textarea{background:#0d1116;border:1px solid var(--stroke);border-radius:12px;padding:12px;color:var(--text)}
+    button[type="submit"]{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#00140a;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      header .menu{display:none}
+      #mobileMenuBtn{display:inline-flex}
+    }
+    #mobileMenuBtn{display:none;border:1px solid var(--stroke);padding:8px 12px;border-radius:10px;cursor:pointer}
+    #mobileMenu{display:none;border-top:1px solid var(--stroke)}
+    #mobileMenu a{display:block;padding:12px 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Go to top">
+        <span class="logo" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 17L12 3l8 14H4z" stroke="#00140a" stroke-width="2" fill="#e6fff4"/>
+          </svg>
+        </span>
+        <span>Frank Chukwu</span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact" class="cta">Hire Me</a>
+      </nav>
+      <button id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </div>
+    <div id="mobileMenu" class="container" role="region" aria-label="Mobile Menu">
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Hire Me</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <span class="pill">WordPress Designer • Website Manager • Blogger</span>
+          <h1>Building fast, clean and conversion‑ready websites.</h1>
+          <p class="lead">I’m <strong>CHUKWU FRANK CHIKAODIRI</strong> (Frank Chukwu) — a WordPress designer who codes with <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>, writes SEO‑friendly content, and manages websites end‑to‑end.</p>
+          <div class="badges" aria-label="Skills badges">
+            <span class="badge">WordPress</span>
+            <span class="badge">Elementor / Gutenberg</span>
+            <span class="badge">HTML • CSS • JS</span>
+            <span class="badge">SEO & Content</span>
+            <span class="badge">Website Management</span>
+            <span class="badge">Speed & Security</span>
+          </div>
+          <div class="stats" aria-label="Quick stats">
+            <div class="stat"><strong>40+</strong><span>Projects Delivered</span></div>
+            <div class="stat"><strong>5★</strong><span>Client Reviews</span></div>
+            <div class="stat"><strong>7 yrs</strong><span>Experience</span></div>
+          </div>
+        </div>
+        <div class="avatar-card">
+          <div class="avatar" role="img" aria-label="Abstract avatar"></div>
+          <p class="muted">Available for freelance & full‑time roles.</p>
+          <a class="cta" href="#contact" style="display:inline-block;margin-top:10px">Start a Project</a>
+          <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="chip" href="mailto:chukwufrankc@gmail.com">Email</a>
+            <a class="chip" href="https://wa.me/2349033703884" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="chip" href="#" onclick="alert('Add your LinkedIn URL')">LinkedIn</a>
+            <a class="chip" href="#" onclick="alert('Add your GitHub URL')">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Selected Projects</h2>
+      <div class="filters" role="tablist" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="wordpress" role="tab">WordPress</button>
+        <button class="filter-btn" data-filter="blog" role="tab">Blogs</button>
+        <button class="filter-btn" data-filter="landing" role="tab">Landing Pages</button>
+        <button class="filter-btn" data-filter="ecommerce" role="tab">E‑commerce</button>
+      </div>
+      <div class="grid" id="projectGrid">
+        <!-- Project Card -->
+        <article class="card project" data-tags="wordpress landing">
+          <div class="project-thumb" aria-hidden="true">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5h18v14H3z" stroke="#bfe9ff"/><path d="M3 9h18" stroke="#bfe9ff"/><circle cx="7" cy="7" r="1" fill="#bfe9ff"/></svg>
+          </div>
+          <h3>Logistics Company Site</h3>
+          <p class="muted">Corporate WordPress theme with service pages, quote form, and mobile‑first design.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">WordPress</span><span class="chip">Elementor</span><span class="chip">Speed 95+</span>
+          </div>
+        </article>
+        <article class="card project" data-tags="blog wordpress">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Content Hub & Blog</h3>
+          <p class="muted">SEO‑ready blog with custom categories, schema, and newsletter capture.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">WordPress</span><span class="chip">Gutenberg</span><span class="chip">SEO</span>
+          </div>
+        </article>
+        <article class="card project" data-tags="landing">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Scholarship Landing Page</h3>
+          <p class="muted">High‑conversion landing with countdown timer and simple application form.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JS</span>
+          </div>
+        </article>
+        <article class="card project" data-tags="ecommerce wordpress">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Fashion E‑commerce</h3>
+          <p class="muted">WooCommerce store with product filters, secure checkout and WhatsApp support.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">WooCommerce</span><span class="chip">Payment</span><span class="chip">Analytics</span>
+          </div>
+        </article>
+        <article class="card project" data-tags="wordpress">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Hotel Website</h3>
+          <p class="muted">Room listing, bookings integration, and elegant UI designed for conversions.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">WordPress</span><span class="chip">Bookings</span><span class="chip">Performance</span>
+          </div>
+        </article>
+        <article class="card project" data-tags="landing wordpress">
+          <div class="project-thumb" aria-hidden="true"></div>
+          <h3>Agency Portfolio</h3>
+          <p class="muted">Clean portfolio with case studies, testimonials and contact automation.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">WordPress</span><span class="chip">Automation</span><span class="chip">CMS</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services" class="container">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card service">
+          <div class="icon" aria-hidden="true">🔧</div>
+          <div>
+            <h3>WordPress Design & Build</h3>
+            <p class="muted">Custom themes, Elementor/Gutenberg builds, WooCommerce stores, and redesigns.</p>
+            <div class="chip">WordPress • Elementor • Woo</div>
+          </div>
+        </div>
+        <div class="card service">
+          <div class="icon" aria-hidden="true">🧭</div>
+          <div>
+            <h3>Website Management</h3>
+            <p class="muted">Updates, backups, speed, security hardening, uptime monitoring and analytics.</p>
+            <div class="chip">Care Plans</div>
+          </div>
+        </div>
+        <div class="card service">
+          <div class="icon" aria-hidden="true">✍️</div>
+          <div>
+            <h3>Blogging & Content</h3>
+            <p class="muted">SEO content strategy, keyword research, on‑page SEO and copywriting.</p>
+            <div class="chip">SEO • Content</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h2>About</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Who I Am</h3>
+          <p class="muted">I am a WordPress designer and website manager based in Abakaliki, Nigeria. I build modern websites with clean UI, solid performance, and content that ranks. I work with businesses, agencies, and entrepreneurs.</p>
+          <ul>
+            <li>WordPress, HTML, CSS, JavaScript</li>
+            <li>Performance, Accessibility, SEO</li>
+            <li>Hosting, Domain, Email setup</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Toolbox</h3>
+          <p class="muted">Daily drivers and stack:</p>
+          <div class="badges">
+            <span class="badge">WordPress</span>
+            <span class="badge">Elementor</span>
+            <span class="badge">Gutenberg</span>
+            <span class="badge">WooCommerce</span>
+            <span class="badge">Yoast/RankMath</span>
+            <span class="badge">cPanel</span>
+            <span class="badge">Cloudflare</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Credentials</h3>
+          <ul>
+            <li>HND & OND in Computer Engineering (2021, 2018)</li>
+            <li>NYSC (2024)</li>
+            <li>Cisco Networking Academy (2022)</li>
+            <li>CCTV & IT Certificates</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="container">
+      <h2>Testimonials</h2>
+      <div class="grid">
+        <div class="card">
+          <p class="quote">“Frank exceeded our expectations. The site is fast, clean and already ranking.”</p>
+          <p>— Adaeze N., Retail Owner</p>
+        </div>
+        <div class="card">
+          <p class="quote">“Great communication and zero downtime during the migration. Highly recommend.”</p>
+          <p>— Chinedu O., Agency Lead</p>
+        </div>
+        <div class="card">
+          <p class="quote">“Our bookings increased after the redesign. Frank knows WordPress inside out.”</p>
+          <p>— Ifeoma K., Hotel Manager</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="container">
+      <h2>From the Blog</h2>
+      <div class="grid">
+        <article class="card post">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>How I speed‑optimize WordPress sites</h3>
+            <p class="muted">Core Web Vitals checklist I use to hit 90+ on Lighthouse.</p>
+          </div>
+        </article>
+        <article class="card post">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>Elementor vs Gutenberg in 2025</h3>
+            <p class="muted">When to use each builder for best performance and control.</p>
+          </div>
+        </article>
+        <article class="card post">
+          <div class="thumb" aria-hidden="true"></div>
+          <div>
+            <h3>Simple SEO for local businesses</h3>
+            <p class="muted">Practical on‑page steps to rank in your city.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Let’s build something great</h3>
+          <p class="muted">Tell me about your project. I typically reply within 24 hours.</p>
+          <form method="post" action="mailto:chukwufrankc@gmail.com" enctype="text/plain">
+            <input aria-label="Your name" required name="name" placeholder="Your name" />
+            <input aria-label="Email" required type="email" name="email" placeholder="Email" />
+            <input aria-label="Budget" name="budget" placeholder="Budget (₦)" />
+            <textarea aria-label="Project details" required name="message" rows="5" placeholder="Project details"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Direct</h3>
+          <p class="muted">Phone: <a href="tel:+2349033703884">+234 903 370 3884</a><br/>Email: <a href="mailto:chukwufrankc@gmail.com">chukwufrankc@gmail.com</a><br/>Location: Abakaliki, Ebonyi State, Nigeria</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+            <a class="chip" href="https://wa.me/2349033703884" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="chip" href="#" onclick="alert('Add your LinkedIn URL')">LinkedIn</a>
+            <a class="chip" href="#" onclick="alert('Add your Twitter URL')">Twitter</a>
+            <a class="chip" href="#" onclick="alert('Add your Facebook URL')">Facebook</a>
+          </div>
+          <div style="margin-top:14px">
+            <a class="cta" href="#" onclick="alert('Attach your latest CV file URL')">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <span>© <span id="year"></span> Frank Chukwu. All rights reserved.</span>
+      <a href="#home" class="chip">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const open = menu.style.display === 'block';
+      menu.style.display = open ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+
+    // Project filter
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project');
+    buttons.forEach(b => b.addEventListener('click', () => {
+      buttons.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const tag = b.dataset.filter;
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags') || '';
+        card.style.display = (tag === 'all' || tags.includes(tag)) ? 'block' : 'none';
+      })
+    }));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
